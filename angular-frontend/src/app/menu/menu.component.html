@@ -1,0 +1,43 @@
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" (click)="openMenu('Pizza');">
+        <div class="w3-col s4 tablink w3-padding-large" [ngClass]="{'w3-red': activeTab === 'Pizza'}">Pizza</div>
+      </a>
+      <a href="javascript:void(0)" (click)="openMenu('Pasta');">
+        <div class="w3-col s4 tablink w3-padding-large" [ngClass]="{'w3-red': activeTab === 'Pasta'}">Pasta</div>
+      </a>
+      <a href="javascript:void(0)" (click)="openMenu('Starter');">
+        <div class="w3-col s4 tablink w3-padding-large" [ngClass]="{'w3-red': activeTab === 'Starter'}">Starter</div>
+      </a>
+    </div>
+
+    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+      <div *ngFor="let pizza of pizzaItems">
+        <h1><b>{{ pizza.Dish }}</b> <span *ngIf="pizza.Tag === 'Popular'" class="w3-tag w3-grey w3-round">Popular</span><span *ngIf="pizza.Tag === 'New'" class="w3-tag w3-grey w3-round">New</span><span *ngIf="pizza.Tag === 'Hot'" class="w3-tag w3-red w3-round">Hot!</span><span *ngIf="pizza.Tag === 'Seasonal'" class="w3-tag w3-grey w3-round">Seasonal</span><span *ngIf="pizza.Tag === 'None'"></span> <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.Price }}</span></h1>
+        <p class="w3-text-grey">{{ pizza.Description }}</p>
+        <hr>
+      </div>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+      <div *ngFor="let pasta of pastaItems">
+        <h1><b>{{ pasta.Dish }}</b> <span *ngIf="pasta.Tag === 'Popular'" class="w3-tag w3-grey w3-round">Popular</span><span *ngIf="pasta.Tag === 'New'" class="w3-tag w3-grey w3-round">New</span><span *ngIf="pasta.Tag === 'Hot'" class="w3-tag w3-red w3-round">Hot!</span><span *ngIf="pasta.Tag === 'Seasonal'" class="w3-tag w3-grey w3-round">Seasonal</span><span *ngIf="pasta.Tag === 'None'"></span> <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pasta.Price }}</span></h1>
+        <p class="w3-text-grey">{{ pasta.Description }}</p>
+        <hr>
+      </div>
+    </div>
+
+    <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+      <div *ngFor="let starter of starterItems">
+        <h1><b>{{ starter.Dish }}</b> <span *ngIf="starter.Tag === 'Popular'" class="w3-tag w3-grey w3-round">Popular</span><span *ngIf="starter.Tag === 'New'" class="w3-tag w3-grey w3-round">New</span><span *ngIf="starter.Tag === 'Hot'" class="w3-tag w3-red w3-round">Hot!</span><span *ngIf="starter.Tag === 'Seasonal'" class="w3-tag w3-grey w3-round">Seasonal</span><span *ngIf="starter.Tag === 'None'"></span> <span class="w3-right w3-tag w3-dark-grey w3-round">{{ starter.Price }}</span></h1>
+        <p class="w3-text-grey">{{ starter.Description }}</p>
+        <hr>
+      </div>
+    </div><br>
+
+  </div>
+</div>

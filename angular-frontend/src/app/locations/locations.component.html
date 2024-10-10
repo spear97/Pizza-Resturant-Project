@@ -1,0 +1,21 @@
+<div class="w3-container w3-padding-64 w3-deep-orange w3-grayscale w3-xlarge" id="locations">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">LOCATIONS</h1>
+        
+        <!-- Table starts here -->
+        <table class="w3-table w3-bordered w3-large">
+            <thead>
+              <tr>
+                <th>Address</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let location of locations">
+                <td>{{ location.Address }}, {{ location.City }}, {{ location.State }}</td>
+                <td>{{ location.Phone }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
